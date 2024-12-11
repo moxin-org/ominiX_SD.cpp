@@ -2,9 +2,9 @@
   <img src="./assets/a%20lovely%20cat.png" width="256x">
 </p>
 
-# stable-diffusion.cpp
+# ominiX_SD
 
-Inference of [Stable Diffusion](https://github.com/CompVis/stable-diffusion) in pure C/C++
+Inference of [Stable Diffusion](https://github.com/CompVis/stable-diffusion) in pure C/C++  based on [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp)
 
 ## Features
 
