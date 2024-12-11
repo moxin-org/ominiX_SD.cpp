@@ -364,6 +364,12 @@ These projects use `stable-diffusion.cpp` as a backend for their image generatio
 
 - [Jellybox](https://jellybox.com)
 
+## Contributors
+
+Thank you to all the people who have already contributed to stable-diffusion.cpp!
+
+[![Contributors](https://contrib.rocks/image?repo=leejet/stable-diffusion.cpp)](https://github.com/leejet/stable-diffusion.cpp/graphs/contributors)
+
 
 ## References
 
