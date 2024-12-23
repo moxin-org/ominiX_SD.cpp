@@ -4,7 +4,22 @@
 
 # ominiX_SD.cpp
 
-Inference of [Stable Diffusion](https://github.com/CompVis/stable-diffusion) in pure C/C++  based on [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp)
+Inference of [Stable Diffusion](https://github.com/CompVis/stable-diffusion) in pure C/C++  based on [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp).  Our optimization for SD.cpp leads to significant inference speedups.  In the following table, we show the speedup performance compared with the original SD.cpp on M1 Pro with 16GB memory and MacOS Sonoma 15.1. 
+
+|  Model 	| Steps 	| Image size 	| Our speedup (F32) 	| Our speedup (F16) 	|
+|:------:	|:-----:	|:----------:	|:-----------------:	|:-----------------:	|
+|  SDXL  	|   20  	|  1024×1024 	|       4.79×       	|       3.06×       	|
+|  SDv2  	|   20  	|   768×768  	|       2.02×       	|       1.68×       	|
+| SDv1.5 	|   20  	|   512×512  	|       1.84×       	|       1.51×       	|
+
+The speedup performance on M2 Max with 32GB memory and MacOS Sequoia 15.0 is shown below. 
+
+|  Model 	| Steps 	| Image size 	| Our speedup (F32) 	| Our speedup (F16) 	|
+|:------:	|:-----:	|:----------:	|:-----------------:	|:-----------------:	|
+|  SDXL  	|   20  	|  1024×1024 	|       4.64×       	|       3.12×       	|
+|  SDv2  	|   20  	|   768×768  	|       1.95×       	|       1.73×       	|
+| SDv1.5 	|   20  	|   512×512  	|       1.77×       	|       1.53×       	|
+
 
 ## Features
 
