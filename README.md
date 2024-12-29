@@ -1,6 +1,6 @@
-# SealAI's Stable DiffusionCpp
+# ominiX_SD.cpp
 
-Inference Implementation for stable diffusion. Powered by SealAI's acceleration engine.
+Inference of [Stable Diffusion](https://github.com/CompVis/stable-diffusion) in pure C/C++  based on [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp).  Our optimization for SD.cpp leads to significant inference speedups.  
 
 **See our tech report here: https://arxiv.org/pdf/2412.05781**
 
@@ -12,22 +12,28 @@ the diffusion models. Although it is lightweight, the current implementation of
 ggml_conv_2d operator in Sdcpp is suboptimal, exhibiting both high inference
 latency and massive memory usage. 
 
+In the following table, we show the speedup performance compared with the original SD.cpp on M1 Pro with 16GB memory and MacOS Sonoma 15.1. 
+
+|  Model 	| Steps 	| Image size 	| Our speedup (F32) 	| Our speedup (F16) 	|
+|:------:	|:-----:	|:----------:	|:-----------------:	|:-----------------:	|
+|  SDXL  	|   20  	|  1024×1024 	|       4.79×       	|       3.06×       	|
+|  SDv2  	|   20  	|   768×768  	|       2.02×       	|       1.68×       	|
+| SDv1.5 	|   20  	|   512×512  	|       1.84×       	|       1.51×       	|
+
+The speedup performance on M2 Max with 32GB memory and MacOS Sequoia 15.0 is shown below. 
+
+|  Model 	| Steps 	| Image size 	| Our speedup (F32) 	| Our speedup (F16) 	|
+|:------:	|:-----:	|:----------:	|:-----------------:	|:-----------------:	|
+|  SDXL  	|   20  	|  1024×1024 	|       4.64×       	|       3.12×       	|
+|  SDv2  	|   20  	|   768×768  	|       1.95×       	|       1.73×       	|
+| SDv1.5 	|   20  	|   512×512  	|       1.77×       	|       1.53×       	|
+
+
 Our framework delivers correct end-to-end results across various stable diffusion
 models, including SDv1.4, v1.5, v2.1, SDXL, and SDXL-Turbo. Our evaluation
 results demonstrate a speedup up to **2.76×** for individual convolution layers and an
 inference speedup up to **4.79×** for the overall image generation process, compared
 with the original Sdcpp.
-
-
-| Model    | Steps | Image Size | Type | Our Acceleration |
-|----------|-------|------------|------|-------------|
-| Sdxl     | 20    | 1024×1024  | F32  | 4.79×       |
-|          |       |            | F16  | 3.06×       |
-| Sd2      | 20    | 768×768    | F32  | 2.02×       |
-|          |       |            | F16  | 1.68×       |
-| Sd1.5    | 20    | 512×512    | F32  | 1.84×       |
-|          |       |            | F16  | 1.51×       |
-##### Latency Comparison with Sdcpp  on M1 Pro (16GB Memory and macOS 15.1)
 
 
 
