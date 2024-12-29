@@ -139,19 +139,3 @@ arguments:
 # ./bin/sd -m ../models/sd_xl_base_1.0.safetensors --vae ../models/sdxl_vae-fp16-fix.safetensors -H 1024 -W 1024 -p "a lovely cat" -v
 ```
 
-
-
-## How to cite us
-
-```
-@misc{ng2024opensourceaccelerationstablediffusioncpp,
-      title={Open-Source Acceleration of Stable-Diffusion.cpp}, 
-      author={Jingxu Ng and Cheng Lv and Pu Zhao and Wei Niu and Juyi Lin and Minzhou Pan and Yun Liang and Yanzhi Wang},
-      year={2024},
-      eprint={2412.05781},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2412.05781}, 
-}
-```
-
